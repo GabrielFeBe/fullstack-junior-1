@@ -16,8 +16,7 @@ export async function POST(req: NextRequest) {
         , {status:404});
     }
     return NextResponse.json({
-      message: `Thank you for your
-      application, ${body.name}`
+      message: `Thank you for your application, ${body.name}`
     })
 }
 
