@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Link from 'next/link'
+import NavBar from "./components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900']
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,32 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <header className="h-[120px] w-[1920px] absolute top-0 z-10 flex items-center" >
           <h1 className="h[52px] w-[92px] mt-[33px] mb-[33px] ml-[160px] mr-[148px]">
             <span className="text-[#fbfbfb] text-[36px] font-semibold">Liv</span>
             <span className="text-[#3dcff6] text-[36px] font-semibold">ia</span>
             <span className="text-[#fbfbfb] text-[36px] font-semibold">.</span>
           </h1>
-          <nav className="w-[512px] h-[27px] mt-[46px] mb-[47px] flex items-center justify-between mr-[200px]">
-            <Link href={'/'} className="font-[18px] text-[#fbfbfb] ">
-            Home
-            </Link>
-            <Link href={'/'} className="font-[18px] text-[#fbfbfb] ">
-            About
-            </Link>
-            <Link href={'/'} className="font-[18px] text-[#fbfbfb] ">
-            Service
-            </Link>
-            <Link href={'/'} className="font-[18px] text-[#fbfbfb] ">
-            Portfolio
-            </Link>
-            <Link href={'/'} className="font-[18px] text-[#fbfbfb] ">
-            Blog
-            </Link>
-            
-
-          </nav>
+          <NavBar></NavBar>
           <button className="w-[149px] h-[60px] flex justify-center items-center bg-[#5365ef] text-[#fbfbfb] text-[18px] ml-auto mr-[160px]">Contact Us</button>
         </header>
         

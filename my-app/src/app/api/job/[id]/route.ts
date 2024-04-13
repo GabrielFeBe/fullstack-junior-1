@@ -17,13 +17,11 @@ export async function GET(req:NextRequest,context:Context) {
     return NextResponse.json({
       message: 'O id não existe'
     }, {
-      status: 404
+      status: 400
     })
   }
 
-  return NextResponse.json({
-    ...job
-  }, {
+  return NextResponse.json(job, {
     status: 200
   })
 }

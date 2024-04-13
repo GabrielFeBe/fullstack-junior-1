@@ -13,7 +13,6 @@ export async function middleware(request: NextRequest) {
   }
 
   const token = authorizationHeader.split(' ')[1];
-  console.log(authorizationHeader)
   if(token !== 'naranja-labs') {
     return NextResponse.json({
       message: 'Você não está autorizado nesta rota'

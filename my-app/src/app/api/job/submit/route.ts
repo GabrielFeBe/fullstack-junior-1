@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     if(arrayOfErrors.length > 0 ) {
       return NextResponse.json(
         {message: `Corpo invalido, os itens: ${arrayOfErrors} vieram com formato invalido ou inexistentes.`}
-        , {status:404});
+        , {status: 400});
     }
     return NextResponse.json({
       message: `Thank you for your application, ${body.name}`
